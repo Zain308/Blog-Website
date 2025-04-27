@@ -2,7 +2,7 @@ export default function Post(){
     return(
         <div className="post">
         <div className="image">
-          <img src="https://techcrunch.com/wp-content/uploads/2025/04/Inspo_Truck_web.jpg?resize=1200,800" /> 
+          <img src="https://techcrunch.com/wp-content/uploads/2025/04/Inspo_Truck_web.jpg?resize=1200,800" alt="" /> 
           </div>
           <div className="texts"> 
           <h2>
