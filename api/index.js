@@ -250,14 +250,13 @@ app.put('/post', uploadMiddleware.single('file'), async (req, res) => {
     res.status(500).json({ error: 'Server error during post update' });
   }
 });
+
 app.get('/posts', async (req, res) => {
   try {
     const posts = await Post.find()
-      .populate('author', ['username'])  // Ensure this line is correct
-      .sort({ createdAt: -1 })
+      .populate('author', ['username'])
+      .sort({ createdAt: -1 })  // This sorts by newest first
       .limit(20);
-    
-    console.log(posts[0]?.author); // Debug: Check if author is populated
     res.json(posts);
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
@@ -266,14 +265,15 @@ app.get('/posts', async (req, res) => {
 
 app.get('/post', async (req, res) => {
   try {
-    const posts = await Post.find().populate('author', ['username']);
+    const posts = await Post.find()
+      .populate('author', ['username'])
+      .sort({ createdAt: -1 });  // Add sorting here as well
     res.json(posts);
   } catch (err) {
     console.error('Error fetching posts:', err);
     res.status(500).json({ error: 'Server error' });
   }
 });
-
 app.get('/post/:id' , async(req,res) => {
   const {id} =req.params;
   const postDoc= await Post.findById(id).populate('author',['username']);
