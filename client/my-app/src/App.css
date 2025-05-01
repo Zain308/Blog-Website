@@ -119,10 +119,18 @@ button {
   font-size: 0.9rem;
   color: #666;
 }
+.post-page .image {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
 .post-page .image img {
-  margin: 1.5rem 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 100%;
+  height: 60vh;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
 }
 .post-page .content {
   font-size: 1.05rem;
@@ -200,6 +208,100 @@ a.edit-btn{
 a svg{
   height: 25px;
 }
+
+.edit-post-container {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.edit-post-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #111827;
+  text-align: center;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"] {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-group input[type="text"]:focus {
+  border-color: #2563eb;
+  outline: none;
+  background-color: #fff;
+}
+
+.cover-preview {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.submit-btn {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #333;
+}
+
+.submit-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.loading, .error {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
 
 /* Media Queries */
 @media (max-width: 768px) {
