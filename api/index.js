@@ -274,6 +274,7 @@ app.get('/post', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+
 app.get('/post/:id' , async(req,res) => {
   const {id} =req.params;
   const postDoc= await Post.findById(id).populate('author',['username']);
